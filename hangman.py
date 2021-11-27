@@ -169,6 +169,9 @@ def hangman(secret_word):
         if(Warning <= 0):
             guesses -= 1
         print(f"You have no warnings! You lost your guess, you have {guesses} guesses")
+      if(guesses <= 0) and Warning<=0:
+        print(f'You lost! Loser. The word you did not guess was:{secret_word}')
+        break
       if(guesses == 0) or guesses == -1:
         print(f'You lost! Loser. The word you did not guess was:{secret_word}')
         break
@@ -303,6 +306,9 @@ def hangman_with_hints(secret_word):
         print(f"You have no warnings! You lost your guess, you have {guesses} guesses")
 
       if(guesses <= 0):
+        print(f'You lost! Loser. The word you did not guess was:{secret_word}')
+        break
+      if(guesses <= 0) and Warning<=0:
         print(f'You lost! Loser. The word you did not guess was:{secret_word}')
         break
       if get_guessed_word(secret_word, letters_guessed)==True:
